@@ -2,6 +2,7 @@ name: CI/CD
 on:
   schedule:
   - cron: '* * * * *'
+  commit_comment:
 
   workflow_dispatch:
 jobs:
