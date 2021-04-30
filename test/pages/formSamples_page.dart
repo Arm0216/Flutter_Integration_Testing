@@ -1,6 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:form_app/main.dart';
-export '../../integration_test/signInWithHttp_test.dart';
+export '../../integration_test/formWidgets_test.dart';
+
 
 class FormSamples{
   var signInWithHttpButton = find.text('Sign in with HTTP');
