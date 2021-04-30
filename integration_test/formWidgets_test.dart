@@ -16,30 +16,5 @@ void main() {
       await formSamples.clickOnFormWidgetsButton(tester);
       expect(find.text("Form widgets"), findsOneWidget);
     });
-
-    // testWidgets('Drop Slider Estimated Value', (tester) async {
-    //   await formSamples.clickOnFormWidgetsButton(tester);
-    //   await formWidgets.dropSliderEstimatedValue(tester);
-    //   expect(formWidgets.moneySlider, findsOneWidget);
-    // });
-    //
-    // testWidgets('Verify Enable Feature', (tester) async {
-    //   await formSamples.clickOnFormWidgetsButton(tester);
-    //   await formWidgets.clickOnSwitchFromEnableFeature(tester);
-    //   expect(formWidgets.activeSwitchEnableFeature, findsOneWidget);
-    // });
-    //
-    // testWidgets('Verify Edit Date button functionality', (tester) async {
-    //   await formSamples.clickOnFormWidgetsButton(tester);
-    //   await formWidgets.clickOnEditDateButton(tester);
-    //   expect(formWidgets.dayNine, findsOneWidget);
-    // });
-    //
-    // testWidgets('Make sure the button is selected', (tester) async {
-    //   await formSamples.clickOnFormWidgetsButton(tester);
-    //   await formWidgets.clickOnEditDateButton(tester);
-    //   await formWidgets.selectDayAndClickOnOkButton(tester);
-    //   expect(formWidgets.dayMonthYear, findsOneWidget);
-    // });
   });
 }
