@@ -1,0 +1,13 @@
+name: CI/CD
+on:
+  commit_comment:
+  - master
+
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run a one-line script
+      run: echo "Everything is okay"
