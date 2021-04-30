@@ -4,39 +4,42 @@ import '../test/pages/formSamples_page.dart';
 import '../test/pages/formWidgets_page.dart';
 
 void main() {
+  FormSamples formSamples = new FormSamples();
+  FormWidgets formWidgets = new FormWidgets();
+
   group('Form widgets', () {
     final binding = IntegrationTestWidgetsFlutterBinding.ensureInitialized()
     as IntegrationTestWidgetsFlutterBinding;
     binding.framePolicy = LiveTestWidgetsFlutterBindingFramePolicy.fullyLive;
 
     testWidgets('Visit to "Form widgets" widget', (tester) async {
-      await FormSamples().clickOnFormWidgetsButton(tester);
+      await formSamples.clickOnFormWidgetsButton(tester);
       expect(find.text("Form widgets"), findsOneWidget);
     });
 
     testWidgets('Drop Slider Estimated Value', (tester) async {
-      await FormSamples().clickOnFormWidgetsButton(tester);
-      await FormWidgets().dropSliderEstimatedValue(tester);
-      expect(FormWidgets().moneySlider, findsOneWidget);
+      await formSamples.clickOnFormWidgetsButton(tester);
+      await formWidgets.dropSliderEstimatedValue(tester);
+      expect(formWidgets.moneySlider, findsOneWidget);
     });
 
     testWidgets('Verify Enable Feature', (tester) async {
-      await FormSamples().clickOnFormWidgetsButton(tester);
-      await FormWidgets().clickOnSwitchFromEnableFeature(tester);
-      expect(FormWidgets().activeSwitchEnableFeature, findsOneWidget);
+      await formSamples.clickOnFormWidgetsButton(tester);
+      await formWidgets.clickOnSwitchFromEnableFeature(tester);
+      expect(formWidgets.activeSwitchEnableFeature, findsOneWidget);
     });
 
     testWidgets('Verify Edit Date button functionality', (tester) async {
-      await FormSamples().clickOnFormWidgetsButton(tester);
-      await FormWidgets().clickOnEditDateButton(tester);
-      expect(FormWidgets().dayNine, findsOneWidget);
+      await formSamples.clickOnFormWidgetsButton(tester);
+      await formWidgets.clickOnEditDateButton(tester);
+      expect(formWidgets.dayNine, findsOneWidget);
     });
 
     testWidgets('Make sure the button is selected', (tester) async {
-      await FormSamples().clickOnFormWidgetsButton(tester);
-      await FormWidgets().clickOnEditDateButton(tester);
-      await FormWidgets().selectDayAndClickOnOkButton(tester);
-      expect(FormWidgets().dayMonthYear, findsOneWidget);
+      await formSamples.clickOnFormWidgetsButton(tester);
+      await formWidgets.clickOnEditDateButton(tester);
+      await formWidgets.selectDayAndClickOnOkButton(tester);
+      expect(formWidgets.dayMonthYear, findsOneWidget);
     });
   });
 }
