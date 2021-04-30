@@ -32,4 +32,7 @@ jobs:
         with:
           flutter-version: '2.0.5'
       - run: flutter pub get
+      - run: flutter format --set-exit-if-changed .
+      - run: flutter analyze .
       - run: flutter drive --driver=integration_test/driver.dart --target=integration_test/formWidgets_test.dart
+      - run: flutter build apk
