@@ -8,7 +8,7 @@ on:
   push:
     branches:
     - master
-  commit_comment:
+  pull_request_review_comment:
     branches:
     - master
 
