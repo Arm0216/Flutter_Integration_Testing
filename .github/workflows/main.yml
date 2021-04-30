@@ -9,6 +9,7 @@ on:
   commit_comment:
     - master
     
+    
 # on: push    # Default will running for every branch.
     
 jobs:
