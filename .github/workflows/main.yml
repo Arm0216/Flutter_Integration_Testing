@@ -1,13 +1,21 @@
 name: CI/CD
 on:
-  commit_comment:
-  - master
+  push:
+    branches:
+      - master
 
   workflow_dispatch:
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo "Everything is okay"
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: flutter drive --driver=integration_test/driver.dart --target=integration_test/formWidgets_test.dart
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          ndk: 21.0.6113669
+          cmake: 3.10.2.4988404
+          script: ./gradlew connectedCheck
