@@ -13,19 +13,12 @@ jobs:
         api-level: [21, 23, 29]
         target: [default]
     steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
       - name: run tests
-        timeout-minutes: 30
         uses: reactivecircus/android-emulator-runner@v2
-        env:
-          ANDROID_SIGN_PWD: ${{ secrets.ANDROID_SIGN_PWD }}
-          SECRET_REPO: ${{ secrets.SECRET_REPO }}
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         with:
-          api-level: 29
-          profile: ${{ matrix.device }}
-          script: |
-            /Users/runner/Library/Android/sdk/tools/bin/avdmanager list
-            ./scripts/setenv.sh
-            cd ./photochatapp
-            flutter pub get
-            flutter drive --driver=integration_test/driver.dart --target=integration_test/formWidgets_test.dart
+          arch: x86_64
+          profile: Nexus 6
+          script: ./gradlew connectedCheck
