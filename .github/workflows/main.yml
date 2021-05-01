@@ -16,9 +16,10 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: flutter drive --driver=integration_test/driver.dart --target=integration_test/formWidgets_test.dart
+      - name: run tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
+          api-level: ${{ matrix.api-level }}
           arch: x86_64
           profile: Nexus 6
           script: ./gradlew connectedCheck
