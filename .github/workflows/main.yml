@@ -7,11 +7,11 @@ on:
   workflow_dispatch:
 jobs:
   test:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         api-level: [21, 23, 29]
-        target: [default]
+        target: [default, google_apis]
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -20,6 +20,7 @@ jobs:
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: ${{ matrix.api-level }}
+          target: ${{ matrix.target }}
           arch: x86_64
           profile: Nexus 6
           script: ./gradlew connectedCheck
