@@ -25,5 +25,4 @@ jobs:
             /Users/runner/Library/Android/sdk/tools/bin/avdmanager list
             ./scripts/setenv.sh
             cd ./photochatapp
-            flutter pub get
             flutter drive --driver=integration_test/driver.dart --target=integration_test/formWidgets_test.dart
