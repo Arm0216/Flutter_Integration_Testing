@@ -5,10 +5,11 @@ export '../../integration_test/formWidgets_test.dart';
 
 class FormWidgets{
   final estimatedValue = find.byType(Slider);
+  final formWidget = find.text("Form widgets");
   final editDate = find.text('Edit');
   final moneySlider = find.text("\$414");
   final dayNine = find.text("9");
-  final dayMonthYear = find.text("4/9/2021");
+  final dayMonthYear = find.text("5/9/2021");
   final okButtonFromDateWidget = find.text("OK");
   final switchEnableFeature = find.byType(Switch);
   final activeSwitchEnableFeature = find.byWidgetPredicate((widget) => widget is Switch && widget.value == true);

@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
-import '../test/pages/formSamples_page.dart';
 // import '../test/pages/formWidgets_page.dart';
+import 'package:form_app/main.dart';
 
 void main() {
-  FormSamples formSamples = new FormSamples();
+  // FormSamples formSamples = new FormSamples();
   // FormWidgets formWidgets = new FormWidgets();
 
   group('Form widgets', () {
@@ -12,9 +12,14 @@ void main() {
     as IntegrationTestWidgetsFlutterBinding;
     binding.framePolicy = LiveTestWidgetsFlutterBindingFramePolicy.fullyLive;
 
+
     testWidgets('Visit to "Form widgets" widget', (tester) async {
-      await formSamples.clickOnFormWidgetsButton(tester);
-      expect(find.text("Form widgets"), findsOneWidget);
+      var formWidgetsButton = find.text('Form widgets');
+      final formWidget = find.text("Form widgets");
+      await tester.pumpWidget(FormApp());
+      await tester.tap(formWidgetsButton);
+      await tester.pumpAndSettle(Duration(seconds: 1));
+      expect(formWidget, findsOneWidget);
     });
 
     // testWidgets('Drop Slider Estimated Value', (tester) async {
