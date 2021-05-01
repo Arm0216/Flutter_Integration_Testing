@@ -9,7 +9,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
-      matrix:
     steps:
       - name: checkout
         uses: actions/checkout@v2
