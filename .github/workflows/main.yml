@@ -10,17 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        api-level: [21, 23, 29]
-        target: [default, google_apis]
     steps:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: run tests
+      - name: flutter drive --driver=integration_test/driver.dart --target=integration_test/formWidgets_test.dart
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: ${{ matrix.api-level }}
-          target: ${{ matrix.target }}
           arch: x86_64
           profile: Nexus 6
           script: ./gradlew connectedCheck
