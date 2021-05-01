@@ -32,6 +32,6 @@ jobs:
         with:
           flutter-version: '2.0.5'
       - run: flutter analyze
-      - run: flutter drive --driver=integration_test/driver.dart --target=integration_test/formWidgets_test.dart
+      - run: flutter test integration_test/formWidgets_test.dart
       #      - run: flutter drive --driver=integration_test/driver.dart --target=integration_test/formWidgets_test.dart
       - run: flutter build apk

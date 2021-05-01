@@ -14,9 +14,9 @@ class FormWidgets{
   final switchEnableFeature = find.byType(Switch);
   final activeSwitchEnableFeature = find.byWidgetPredicate((widget) => widget is Switch && widget.value == true);
 
-  Future<void> dropSliderEstimatedValue(tester) async{
+  Future<void> dragSliderEstimatedValue(tester) async{
     await tester.pumpWidget(FormApp());
-    await tester.drag(estimatedValue, Offset(100, 0));
+    await tester.drag(estimatedValue, const Offset(100, 0));
     await tester.pumpAndSettle(Duration(seconds: 1));
   }
 
