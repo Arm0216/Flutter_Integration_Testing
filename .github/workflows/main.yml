@@ -14,14 +14,8 @@ jobs:
       - name: run tests
         timeout-minutes: 30
         uses: reactivecircus/android-emulator-runner@v2
-        env:
-          ANDROID_SIGN_PWD: ${{ secrets.ANDROID_SIGN_PWD }}
-          SECRET_REPO: ${{ secrets.SECRET_REPO }}
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         with:
           artifacts: "build/app/outputs/apk/debug/*.apk"
           token: $({ secrets.TOKEN })
-          api-level: 29
-          profile: ${{ matrix.device }}
           script: |
             flutter drive --driver=integration_test/driver.dart --target=integration_test/formWidgets_test.dart
