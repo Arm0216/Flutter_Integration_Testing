@@ -8,6 +8,10 @@ on:
 jobs:
   test:
     runs-on: macos-latest
+    strategy:
+      matrix:
+        api-level: [21, 23, 29]
+        target: [default, google_apis]
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -15,7 +19,8 @@ jobs:
       - name: flutter drive --driver=integration_test/driver.dart --target=integration_test/formWidgets_test.dart
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 29
-          ndk: 21.0.6113669
-          cmake: 3.10.2.4988404
+          api-level: ${{ matrix.api-level }}
+          target: ${{ matrix.target }}
+          arch: x86_64
+          profile: Nexus 6
           script: ./gradlew connectedCheck
