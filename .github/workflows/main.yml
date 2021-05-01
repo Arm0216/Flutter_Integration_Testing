@@ -16,7 +16,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: run tests
+      - name: flutter drive --driver=integration_test/driver.dart --target=integration_test/formWidgets_test.dart
         uses: reactivecircus/android-emulator-runner@v2
         with:
           arch: x86_64
