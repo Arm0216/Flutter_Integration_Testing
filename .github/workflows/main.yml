@@ -21,4 +21,4 @@ jobs:
           api-level: 29
           profile: ${{ matrix.device }}
           script: |
-            flutter drive --driver=integration_test/driver.dart --target=integration_test/formWidgets_test.dart
+            flutter drive --driver=integration_test/driver.dart --target=integration_test/formWidgets_test.dart --browser-name=chrome -d chrome --release
