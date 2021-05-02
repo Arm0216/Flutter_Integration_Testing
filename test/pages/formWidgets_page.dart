@@ -17,7 +17,7 @@ class FormWidgets{
   Future<void> dragSliderEstimatedValue(tester) async{
     await tester.pumpWidget(FormApp());
     await tester.drag(estimatedValue, const Offset(200, 0));
-    await tester.pumpAndSettle(Duration(seconds: 2));
+    await tester.pumpAndSettle(Duration(seconds: 1));
   }
 
   Future<void> clickOnSwitchFromEnableFeature(tester) async{
