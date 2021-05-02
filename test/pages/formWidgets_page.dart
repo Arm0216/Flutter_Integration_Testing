@@ -7,7 +7,7 @@ class FormWidgets{
   final estimatedValue = find.byType(Slider);
   final formWidget = find.text("Form widgets");
   final editDate = find.text('Edit');
-  final moneySlider = find.text('\$414');
+  final moneySlider = find.text('\$500');
   final dayNine = find.text("9");
   final dayMonthYear = find.text("5/9/2021");
   final okButtonFromDateWidget = find.text("OK");
@@ -16,7 +16,7 @@ class FormWidgets{
 
   Future<void> dragSliderEstimatedValue(tester) async{
     await tester.pumpWidget(FormApp());
-    await tester.drag(estimatedValue, const Offset(100, 0));
+    await tester.drag(estimatedValue, const Offset(200, 0));
     await tester.pumpAndSettle(Duration(seconds: 2));
   }
 
