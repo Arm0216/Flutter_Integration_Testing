@@ -1,4 +1,5 @@
 // import 'package:flutter_driver/flutter_driver.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import '../test/pages/formSamples_page.dart';
@@ -21,7 +22,7 @@ void main() {
     testWidgets('Drag Slider Estimated Value', (tester) async {
       await formSamples.clickOnFormWidgetsButton(tester);
       await formWidgets.dragSliderEstimatedValue(tester);
-      // expect(formWidgets.moneySlider, findsOneWidget);
+      expect(formWidgets.moneySlider, isNot(equals(0)));
     });
 
     testWidgets('Verify Enable Feature', (tester) async {
