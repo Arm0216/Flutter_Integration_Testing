@@ -20,7 +20,6 @@ void main() {
     testWidgets('Drag Slider Estimated Value', (tester) async {
       await formSamples.clickOnFormWidgetsButton(tester);
       await formWidgets.dragSliderEstimatedValue(tester);
-      await tester.pumpAndSettle(Duration(seconds: 15));
       expect(formWidgets.moneySlider, findsOneWidget);
     });
 
