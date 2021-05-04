@@ -41,5 +41,23 @@ void main() {
       await formWidgets.selectDayAndClickOnOkButton(tester);
       expect(formWidgets.dayMonthYear, findsOneWidget);
     });
+
+    testWidgets('Enter Text in The Title Field', (tester) async {
+      await formSamples.clickOnFormWidgetsButton(tester);
+      await formWidgets.enterTextInTitleField(tester);
+      expect(formWidgets.titleAbout, findsOneWidget);
+    });
+
+    testWidgets('Enter Text in The Description Field', (tester) async {
+      await formSamples.clickOnFormWidgetsButton(tester);
+      await formWidgets.enterTextInDescriptionField(tester);
+      expect(formWidgets.verifyInputDescription, findsOneWidget);
+    });
+
+    testWidgets('Click on The Brushed Teeth CheckBox', (tester) async {
+      await formSamples.clickOnFormWidgetsButton(tester);
+      await formWidgets.clickOnBrushedTeethCheckBox(tester);
+      expect(formWidgets.activeBrushedTeethCheckBox, findsOneWidget);
+    });
   });
 }
