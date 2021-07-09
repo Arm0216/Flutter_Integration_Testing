@@ -6,7 +6,7 @@ A sample demonstrating different types of forms and best practices.
 Instrument the app. This involves two steps:
 
 1. Enable the flutter driver extensions.
-2. Run the app[*integration_test/driver.dart*](integration_test/driver.dart).
+2. Run the app [*integration_test/driver.dart*](integration_test/driver.dart).
 
 
 ## Run the tests
