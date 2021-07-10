@@ -14,7 +14,7 @@ class FormWidgets{
   final inputDescription = find.widgetWithText(InputDecorator, 'Description');
   final moneySlider = find.text('\$500');
   final dayNine = find.text("9");
-  final dayMonthYear = find.text("5/9/2021");
+  final dayMonthYear = find.text("7/9/2021");
   final okButtonFromDateWidget = find.text("OK");
   final switchEnableFeature = find.byType(Switch);
   final activeSwitchEnableFeature = find.byWidgetPredicate((widget) => widget is Switch && widget.value == true);
